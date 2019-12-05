@@ -29,7 +29,7 @@ const Chart = ({ sparklineData }) => {
   return (
     <AreaChart width={1100} height={300} data={formattedData}>
       <defs>
-        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
             <stop offset="35%" stopColor="#8884d8" stopOpacity={0.9}/>
             <stop offset="95%" stopColor="#f7931a" stopOpacity={0.1}/>
         </linearGradient>
@@ -38,7 +38,7 @@ const Chart = ({ sparklineData }) => {
       <XAxis dataKey="date" interval={3} />
       <YAxis />
       <Tooltip />
-      <Area className="area" type="monotone" dataKey="value" stroke="#8884d8" fill="url(#colorUv)"/>
+      <Area className="area" type="monotone" dataKey="value" stroke="#8884d8" fill="url(#area)"/>
     </AreaChart>
   );
 };
