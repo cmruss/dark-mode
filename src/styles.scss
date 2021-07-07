@@ -181,16 +181,16 @@ img {
 }
 
 .dark-mode__toggle {
-  background: papayawhip;
+  background: whitesmoke;
   border-radius: 50px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
   height: 20px;
   position: relative;
   width: 40px;
 }
 
 .toggle {
-  background: #f68819;
+  background: #8884d8;
   border-radius: 50px;
   height: 18px;
   left: 0;
@@ -249,5 +249,13 @@ text-align: left;
   .navbar {
     background-color: #1F2022;
     border: none;
+  }
+
+  .dark-mode__toggle {
+    background: papayawhip;
+  }
+
+  .toggle {
+    background: #f7931a;
   }
 }

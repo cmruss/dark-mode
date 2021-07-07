@@ -1,8 +1,8 @@
 import React from "react";
 import moment from "moment";
 import {
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   CartesianGrid,
   XAxis,
   YAxis,
@@ -27,13 +27,19 @@ const Chart = ({ sparklineData }) => {
     .filter(data => data);
 
   return (
-    <LineChart width={1100} height={300} data={formattedData}>
-      <Line type="monotone" dataKey="value" stroke="#8884d8" />
+    <AreaChart width={1100} height={300} data={formattedData}>
+      <defs>
+        <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="35%" stopColor="#8884d8" stopOpacity={0.9}/>
+            <stop offset="95%" stopColor="#f7931a" stopOpacity={0.1}/>
+        </linearGradient>
+      </defs>
       <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
       <XAxis dataKey="date" interval={3} />
       <YAxis />
       <Tooltip />
-    </LineChart>
+      <Area className="area" type="monotone" dataKey="value" stroke="#8884d8" fill="url(#area)"/>
+    </AreaChart>
   );
 };
 
